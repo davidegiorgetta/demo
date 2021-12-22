@@ -62,6 +62,7 @@ p {
     padding: 2.4vw;
     width: 100vw;
     height: 100vh;
+    overflow-y: auto;
 }
 
 .ticker {
@@ -92,7 +93,33 @@ p {
     margin-bottom: 2.5vw;
 }
 
-.section-active .archive {
+.section-archive-active .archive {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.about {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    padding: 2.4vw 2.4vw 10vw 2.4vw;
+    top: 0px;
+    left: 0px; 
+    transition: opacity 0.2s linear;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.about p {
+    font-size: 2.2vw;
+    line-height: 2.6vw;
+    margin-bottom: 2.5vw;
+}
+
+.section-about-active .about {
     opacity: 1;
     pointer-events: all;
 }
@@ -153,6 +180,7 @@ p {
     right: 2.4vw;
     bottom: 0px;
     cursor: pointer;
+    display: flex;
 }
 
 .footer .button p {
@@ -161,17 +189,40 @@ p {
 
 .footer .button .archive-button {
     display: block;
+    margin-left: 2.4vw;
+}
+
+.footer .button .about-button {
+    display: block;
+    margin-left: 2.4vw;
 }
 
 .footer .button .back-button {
     display: none;
+    margin-left: 2.4vw;
 }
 
-.section-active .footer .button .archive-button {
+.section-archive-active .footer .button .archive-button {
     display: none;
 }
 
-.section-active .footer .button .back-button {
+.section-archive-active .footer .button .about-button {
+    display: none;
+}
+
+.section-about-active .footer .button .about-button {
+    display: none;
+}
+
+.section-about-active .footer .button .archive-button {
+    display: none;
+}
+
+.section-archive-active .footer .button .back-button {
+    display: block;
+}
+
+.section-about-active .footer .button .back-button {
     display: block;
 }
 

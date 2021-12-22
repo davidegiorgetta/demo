@@ -13,17 +13,15 @@ jQuery(function(){
     });
 });
 
-jQuery(document).ready(function() {
-    jQuery('html, body, *').mousewheel(function(e, delta) {
-        jQuery('.cover-images').scrollLeft -= (delta);
-        e.preventDefault();
-    });
+jQuery(".archive-button").click(function() {
+    jQuery("body").addClass("section-archive-active");
 });
 
-jQuery(".archive-button").click(function() {
-    jQuery("body").addClass("section-active");
+jQuery(".about-button").click(function() {
+    jQuery("body").addClass("section-about-active");
 });
 
 jQuery(".back-button").click(function() {
-    jQuery("body").removeClass("section-active");
+    jQuery("body").removeClass("section-archive-active");
+    jQuery("body").removeClass("section-about-active");
 });
